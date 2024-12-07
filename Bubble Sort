@@ -1,0 +1,41 @@
+#include<stdio.h>
+
+void bubblesort(int arr[],int n){
+    int i,j,temp;
+    int isSorted=0;
+    for(int i=0;i<n-1;i++){
+        printf("work number is: %d\n",i+1);
+        isSorted=1;
+    
+    for(int j=0;j<n-i-1;j++){
+        if(arr[j]>arr[j+1]){
+            temp=arr[j];
+            arr[j]=arr[j+1];
+            arr[j+1]=temp;
+            isSorted=0;
+        }
+    }
+    if(isSorted){
+        return;
+    }
+    }
+}
+
+void printarr(int arr[],int n){
+    for(int i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+}
+
+int main(){
+    int arr[]={99,34,12,3,2,1,4,6,89,67};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    printf("original array :");
+    printarr(arr,n);
+    
+    bubblesort(arr,n);
+    printf("sorted array :");
+    printarr(arr,n);
+    return 0;
+}
